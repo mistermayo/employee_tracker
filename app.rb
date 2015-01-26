@@ -15,8 +15,7 @@ post("/divisions") do
   division_name = params["division_name"]
   division = Division.new({:division_name => division_name, :id => nil})
   division.save()
-  @divisions = Division.all()
-  erb(:index)
+  redirect('/')
 end
 
 get("/divisions/:id") do
@@ -74,6 +73,7 @@ post('/projects') do
   @project = Project.new({:project_name => project_name, :employee_id => employee_id, :done => false})
   @project.save()
   @employee = Employee.find(employee_id)
+  @projects = Project.all()
   erb(:employee)
 end
 

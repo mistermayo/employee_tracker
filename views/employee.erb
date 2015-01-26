@@ -6,7 +6,7 @@
   <h3>Project List:</h3>
   <ol>
     <% @employee.projects().each() do |project| %>
-      <li><%= project.project_name() %> | <a href="/projects/<%= project.id() %>/edit">update</a></li>
+      <li><%= project.project_name() %> | <a href="/projects/<%= project.id() %>">update</a></li>
     <% end %>
   </ol>
 <%else %>
