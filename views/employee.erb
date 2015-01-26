@@ -6,7 +6,7 @@
   <h3>Project List:</h3>
   <ol>
     <% @employee.projects().each() do |project| %>
-      <li><%= project.project_name() %> | <a href="/projects/<%= project.id() %>">update</a></li>
+      <li><%= project.project_name() %> | <a href="/projects/<%= project.id() %>/edit">update</a></li>
     <% end %>
   </ol>
 <%else %>
@@ -24,4 +24,4 @@
   <button type="submit">Add a Project!</button>
 </form>
 
-<span class="return"><p><a href="/">Return to Full List of employees</a></p></span>
+<span class="return"><p><a href="/">Return to Full List of Divisions</a></p></span>

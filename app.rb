@@ -58,7 +58,7 @@ patch("/employees/:id") do
   @employee = Employee.find(params.fetch("id").to_i())
   @employee.update({:employee_name => employee_name})
   @employees = Employee.all()
-  erb(:employee)
+  erb(:employee_edit)
 end
 
 get('/employees/:id/edit') do

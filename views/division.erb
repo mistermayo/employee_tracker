@@ -6,7 +6,7 @@
   <h3>Employee List:</h3>
   <ol>
     <% @division.employees().each() do |employee| %>
-      <li><a href="/employees/<%= employee.id() %>"><%= employee.employee_name() %></a> | <a href="/employees/<%= employee.id() %>">update</a></li>
+      <li><a href="/employees/<%= employee.id() %>"><%= employee.employee_name() %></a> | <a href="/employees/<%= employee.id() %>/edit">update</a></li>
     <% end %>
   </ol>
 <%else %>

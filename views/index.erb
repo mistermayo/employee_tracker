@@ -1,4 +1,4 @@
-<h1>Employee Record</h1>
+<h1>Employee Tracker</h1>
 
 <hr>
 
@@ -6,7 +6,7 @@
   <h3>Click on a division to see a list of its employees:</h3>
   <ul>
     <% @divisions.each do |division| %>
-      <li><a href="/divisions/<%= division.id() %>"><%= division.division_name() %></a></li>
+      <li><a href="/divisions/<%= division.id() %>"><%= division.division_name() %></a> | <a href="/divisions/<%= division.id() %>/edit">update</a></li>
     <% end %>
   </ul>
 <% else %>
