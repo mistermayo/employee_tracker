@@ -1,45 +1,44 @@
 body {
   font-family: 'Oswald', sans-serif;
   font-size: 16px;
-  background-color: #FFF9E3;
+  background-color: #FF987D;
   color: #444;
 }
 
 h1 {
-  font-family: 'Molle', cursive;
-  font-style: italic;
+  font-family: 'Bree Serif', serif;
   font-size: 64px;
 }
 
 h1, h2 {
-  color: #7A2958;
-  text-shadow: 1.5px 1.5px #FFF3C5;
+  color: #B62082;
+  text-shadow: 1.5px 1.5px #570038;
 }
 
 h2, h3 {
-  font-family: 'Yanone Kaffeesatz', serif;
-  font-style: normal;
+font-family: 'Bree Serif', serif;
+font-style: normal;
 }
 
 h2 {
-  font-size: 48px;
+  font-size: 46px;
 }
 
 h3 {
-  font-size: 28px;
+  font-size: 24px;
 }
 
 a {
-  color: #59103B;
-}
-
-a:hover {
-  color: #59103B;
-  text-decoration: underline;
+  color: #B62082;
 }
 
 a:visited {
-  color: #59103B;
+  color: #B62082;
+}
+
+a:hover {
+  color: #006E30;
+  text-decoration: underline;
 }
 
 ul {
@@ -55,7 +54,7 @@ li {
 .container {
   margin-top: 10%;
   width: 55%;
-  background-color: #81A8A2;
+  background-color: #6BDB9C;
 }
 
 .form-entry {
