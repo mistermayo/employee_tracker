@@ -1,0 +1,24 @@
+<h1>Employee Record</h1>
+
+<hr>
+
+<% if @divisions.any?() %>
+  <h3>Click on a division to see a list of its employees:</h3>
+  <ul>
+    <% @divisions.each do |division| %>
+      <li><a href="/divisions/<%= division.id() %>"><%= division.division_name() %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+<p>There are no divisions yet!</p>
+<% end %>
+
+<hr>
+
+<h3>Add a division:</h3>
+
+<form action="/divisions" method="post" class="form-entry">
+  <label for="division_name"></label>
+  <input id="division_name" name="division_name" type="text" placeholder="Division's Name">
+  <button type="submit">Add Division</button>
+</form>
