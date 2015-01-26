@@ -1,0 +1,27 @@
+<h2><%= @employee.employee_name() %></h2>
+
+<hr>
+
+<% if @employee.projects().any?() %>
+  <h3>Project List:</h3>
+  <ol>
+    <% @employee.projects().each() do |project| %>
+      <li><%= project.project_name() %> | <a href="/projects/<%= project.id() %>">update</a></li>
+    <% end %>
+  </ol>
+<%else %>
+  <p>There are no projects yet!</p>
+<% end %>
+
+<hr>
+
+<h3>Add a project:</h3>
+
+<form action="/projects" method="post" class="form-entry">
+  <input id="employee_id" name="employee_id" type="hidden" value="<%= @employee.id() %>">
+  <label for="project_name"></label>
+  <input id="project_name" name="project_name" type="text" placeholder="Project's Name">
+  <button type="submit">Add a Project!</button>
+</form>
+
+<span class="return"><p><a href="/">Return to Full List of employees</a></p></span>
