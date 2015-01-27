@@ -3,12 +3,24 @@
 <hr>
 
 <% if @employee.projects().any?() %>
-  <h3>Project List:</h3>
+  <h3>Unfinished Project List:</h3>
+
   <ol>
-    <% @employee.projects().each() do |project| %>
-      <li><%= project.project_name() %> | <a href="/projects/<%= project.id() %>">update</a></li>
+    <% @unfinished_projects.each() do |unfinished_project| %>
+      <li><%= unfinished_project.project_name() %> | <a href="/projects/<%= unfinished_project.id() %>">update</a></li>
     <% end %>
   </ol>
+
+  <p>-----</p>
+
+  <h3>Finished Project List:</h3>
+
+  <ol>
+    <% @finished_projects.each() do |finished_project| %>
+      <li><%= finished_project.project_name() %> | <a href="/projects/<%= finished_project.id() %>">update</a></li>
+    <% end %>
+  </ol>
+
 <%else %>
   <p>There are no projects yet!</p>
 <% end %>

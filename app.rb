@@ -4,6 +4,7 @@ also_reload("lib/**/*.rb")
 require("sinatra/activerecord")
 require("./lib/division")
 require("./lib/employee")
+require("./lib/project")
 require("pg")
 
 get('/') do
@@ -27,8 +28,7 @@ patch("/divisions/:id") do
   division_name = params.fetch("division_name")
   @division = Division.find(params.fetch("id").to_i())
   @division.update({:division_name => division_name})
-  @divisions = Division.all()
-  erb(:index)
+  redirect('/')
 end
 
 get('/divisions/:id/edit') do
@@ -49,6 +49,9 @@ end
 
 get("/employees/:id") do
   @employee = Employee.find(params["id"].to_i())
+  @projects = @employee.projects().all()
+  @unfinished_projects = @projects.not_done()
+  @finished_projects = @projects.is_done()
   erb(:employee)
 end
 

@@ -3,4 +3,7 @@ class Project < ActiveRecord::Base
   scope(:not_done, -> do
     where({:done => false})
   end)
+  scope(:is_done, -> do
+    where({:done => true})
+  end)
 end
