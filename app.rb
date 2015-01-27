@@ -49,9 +49,6 @@ end
 
 get("/employees/:id") do
   @employee = Employee.find(params["id"].to_i())
-  @projects = @employee.projects().all()
-  @unfinished_projects = @projects.not_done()
-  @finished_projects = @projects.is_done()
   erb(:employee)
 end
 
